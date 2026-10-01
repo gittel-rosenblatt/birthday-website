@@ -78,7 +78,10 @@ main {
 
 .camera-lens-container {
     position: relative;
-    width: 400px; height: 400px;
+    width: 400px; 
+    height: 400px;
+    max-width: 85vw;
+    max-height: 85vw; 
     border-radius: 50%; 
     border: 8px solid #333;
     overflow: hidden;
