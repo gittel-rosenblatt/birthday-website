@@ -1,0 +1,209 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h1, p {
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 1.75rem;
+    color: #007722;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem;
+    color: #385944;
+    font-weight: 600;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #007722, transparent);
+    width: 80%; 
+    margin: 1rem auto; 
+}
+
+header, footer {
+    background-color: #e1ebe3;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    background-color: #f1f6f2;
+    display: flex;
+    flex-direction: column;
+}
+
+.live-polaroid-card {
+    background: white;
+    padding: 15px 15px 30px 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    transform: rotate(3deg);
+    width: 280px;
+    align-self: center;
+}
+
+#live-polaroid-photo {
+    width: 100%;
+    aspect-ratio: 1/1; 
+    object-fit: cover;
+}
+
+.polaroid-caption {
+    font-family: 'Courier New', Courier, monospace; 
+    text-align: center;
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#camera-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: #222; 
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera-lens-container {
+    position: relative;
+    width: 400px; height: 400px;
+    border-radius: 50%; 
+    border: 8px solid #333;
+    overflow: hidden;
+}
+
+#webcam {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); 
+}
+
+#countdown {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 90px; color: white; font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+#flash-effect {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10000;
+    transition: opacity 0.3s ease-out;
+}
+#flash-effect.active {
+    opacity: 1;
+    transition: none; 
+}
+
+.birthday-message {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+    gap: 40px;
+    max-width: 1000px; 
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.birthday-message h1 {
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.end {
+    margin-bottom: 15px;
+}
+
+.message-text {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    max-width: 600px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.masonry-gallery {
+    column-count: 4; 
+    column-gap: 15px;
+    padding: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    break-inside: avoid; 
+    margin-bottom: 16px;  
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out; 
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; 
+    display: block;
+    border-radius: 8px; 
+}
+
+.btn-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.photos-main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .masonry-gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+    .masonry-gallery {
+        column-count: 2; 
+        column-gap: 12px;
+    }
+    .gallery-item {
+        margin-bottom: 12px;
+    }
+
+    .birthday-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin: 0
+    }
+}
+
+@media (max-width: 480px) {
+    .masonry-gallery {
+        column-count: 1;  
+    }
+}
